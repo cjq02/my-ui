@@ -1,12 +1,13 @@
 <template>
   <div class="page">
-    <header class="top" v-if="showHeader">
+    <!-- 页面中上方本地标题（与全局导航独立） -->
+    <div class="page-title">
       <div class="brand-row">
         <div class="mark">国</div>
         <div class="gov-title">国家体育总局</div>
       </div>
-    </header>
-    <img class="bg-image" src="@/assets/img/login1/login-pic.png" alt="stadium background" />
+    </div>
+    <img class="bg-image" src="@/assets/img/login/login-pic.png" alt="stadium background" />
     <div class="orb orb--1"></div>
     <div class="orb orb--2"></div>
     <div class="container">
@@ -30,70 +31,11 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, ref, onMounted, onBeforeUnmount } from 'vue'
+import { reactive, ref } from 'vue'
 interface LoginForm { username: string; password: string }
 const form = reactive<LoginForm>({ username: '', password: '' })
 const submitting = ref(false)
-const showHeader = ref(true)
-
-// 拖动按钮位置与逻辑（仅在隐藏时生效）
-const dragPos = reactive({ x: 0, y: 0 })
-const dragging = ref(false)
-let offsetX = 0
-let offsetY = 0
-
-function ensureInViewport(x: number, y: number) {
-  const btnSize = 52
-  const padding = 8
-  const maxX = Math.max(padding, window.innerWidth - btnSize - padding)
-  const maxY = Math.max(padding, window.innerHeight - btnSize - padding)
-  return {
-    x: Math.min(maxX, Math.max(padding, x)),
-    y: Math.min(maxY, Math.max(padding, y)),
-  }
-}
-
-function setDefaultPos() {
-  const pos = ensureInViewport(window.innerWidth - 52 - 20, window.innerHeight - 52 - 20)
-  dragPos.x = pos.x
-  dragPos.y = pos.y
-}
-
-function onDragStart(e: MouseEvent) {
-  if (showHeader.value) return
-  dragging.value = true
-  offsetX = e.clientX - dragPos.x
-  offsetY = e.clientY - dragPos.y
-}
-
-function onDragMove(e: MouseEvent) {
-  if (!dragging.value) return
-  const pos = ensureInViewport(e.clientX - offsetX, e.clientY - offsetY)
-  dragPos.x = pos.x
-  dragPos.y = pos.y
-}
-
-function onDragEnd() {
-  dragging.value = false
-}
-
-function toggleHeader() {
-  showHeader.value = !showHeader.value
-  if (!showHeader.value) setDefaultPos()
-}
-
-onMounted(() => {
-  setDefaultPos()
-  window.addEventListener('mousemove', onDragMove)
-  window.addEventListener('mouseup', onDragEnd)
-  window.addEventListener('mouseleave', onDragEnd)
-})
-
-onBeforeUnmount(() => {
-  window.removeEventListener('mousemove', onDragMove)
-  window.removeEventListener('mouseup', onDragEnd)
-  window.removeEventListener('mouseleave', onDragEnd)
-})
+// 顶部标题已统一交由全局 top-nav 控制
 async function onSubmit(){
   if(!form.username||!form.password) return alert('请输入用户名和密码')
   submitting.value = true
@@ -104,7 +46,7 @@ async function onSubmit(){
 
 <style lang="scss" scoped>
 .page { position: fixed; inset: 0; display: grid; place-items: center; background: radial-gradient(65% 65% at 50% 35%, #0B1B4A 0%, #0A1440 40%, #061233 100%); overflow: hidden; }
-.top { position: fixed; top:0; left:0; right:0; height: 72px; display:flex; align-items:center; padding:0 24px; color:#fff; background: linear-gradient(180deg, rgba(6,18,51,.75), rgba(6,18,51,.15)); backdrop-filter: blur(6px); z-index:5; box-shadow: 0 6px 18px rgba(2,6,23,.28); }
+.page-title { position: absolute; top: 72px; left: 0; right: 0; display:flex; justify-content: center; z-index: 4; }
 .bg-image { position:absolute; inset:0; width:100%; height:100%; object-fit: cover; filter: blur(16px) brightness(0.55); opacity: .55; }
 .orb { position: absolute; border-radius: 50%; filter: blur(90px); opacity: .35; }
 .orb--1 { width: 42vw; height: 42vw; left: -12vw; top: -10vw; background: #1D4ED8; }
@@ -127,28 +69,5 @@ async function onSubmit(){
 .btn:hover { background: linear-gradient(135deg, #1D4ED8, #1E3A8A); }
 .btn:disabled { opacity: .6; }
 
-/* 显隐控制按钮样式 */
-.toggle-btn {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  width: 120px;
-  height: 40px;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,.35);
-  background: linear-gradient(135deg, #3b82f6, #2563eb);
-  color: #fff;
-  box-shadow: 0 10px 24px rgba(37,99,235,.35);
-  z-index: 6;
-}
-.toggle-btn.floating {
-  position: fixed;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  padding: 0;
-}
 </style>
 

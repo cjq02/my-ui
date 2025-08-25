@@ -15,7 +15,7 @@
 
         <div class="brand-visual">
           <div class="illustration-card">
-            <img class="brand-illustration" src="@/assets/img/login1/login-pic.png" alt="智慧场馆插画" />
+            <img class="brand-illustration" src="@/assets/img/login/login-pic.png" alt="智慧场馆插画" />
           </div>
         </div>
       </section>
