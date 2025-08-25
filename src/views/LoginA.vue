@@ -7,7 +7,7 @@
         <div class="gov-title">国家体育总局</div>
       </div>
     </div>
-    <img class="bg-image" src="@/assets/img/login/login-bg.jpg" alt="stadium background" />
+    <img class="bg-image" src="@/assets/img/login/login-bg.png" alt="stadium background" />
     <div class="orb orb--1"></div>
     <div class="orb orb--2"></div>
     <div class="container">
