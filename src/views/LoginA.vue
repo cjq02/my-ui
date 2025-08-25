@@ -47,10 +47,11 @@ async function onSubmit(){
 <style lang="scss" scoped>
 .page { position: fixed; inset: 0; display: grid; place-items: center; background: radial-gradient(65% 65% at 50% 35%, #0B1B4A 0%, #0A1440 40%, #061233 100%); overflow: hidden; }
 .page-title { position: absolute; top: 72px; left: 0; right: 0; display:flex; justify-content: center; z-index: 4; }
-.bg-image { position:absolute; inset:0; width:100%; height:100%; object-fit: cover; filter: blur(16px) brightness(0.55); opacity: .55; }
-.orb { position: absolute; border-radius: 50%; filter: blur(90px); opacity: .35; }
-.orb--1 { width: 42vw; height: 42vw; left: -12vw; top: -10vw; background: #1D4ED8; }
-.orb--2 { width: 36vw; height: 36vw; right: -10vw; bottom: -12vw; background: #06B6D4; }
+.bg-image { position:absolute; inset:0; width:100%; height:100%; object-fit: cover; filter: blur(8px) brightness(0.62) saturate(1.1); opacity: .48; }
+.orb { position: absolute; border-radius: 50%; filter: blur(100px); opacity: .30; }
+.orb--1 { width: 42vw; height: 42vw; left: -12vw; top: -10vw; background: #2563EB; }
+.orb--2 { width: 36vw; height: 36vw; right: -10vw; bottom: -12vw; background: #3B82F6; }
+.page::before { content:""; position:absolute; inset:0; background: radial-gradient(55% 55% at 50% 40%, rgba(37,99,235,.25), rgba(37,99,235,0) 70%); pointer-events:none; z-index:1; }
 .container { width: min(90vw, 920px); padding: 40px; }
 .card { margin: 0 auto; width: min(100%, 520px); background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.18); box-shadow: 0 24px 60px rgba(2,6,23,.45); backdrop-filter: blur(10px); border-radius: 18px; padding: 28px 28px 24px; }
 .header { text-align: center; margin-bottom: 14px; color: #E5E7EB; }
