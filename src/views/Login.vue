@@ -14,7 +14,9 @@
         </header>
 
         <div class="brand-visual">
-          <img class="brand-illustration" src="@/assets/img/login1/login-pic.png" alt="智慧场馆插画" />
+          <div class="illustration-card">
+            <img class="brand-illustration" src="@/assets/img/login1/login-pic.png" alt="智慧场馆插画" />
+          </div>
         </div>
       </section>
 
@@ -93,8 +95,8 @@ async function onSubmit() {
 .decor-grid {
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 28px 28px, 28px 28px;
   pointer-events: none;
 }
@@ -138,8 +140,9 @@ async function onSubmit() {
   justify-content: space-between;
   border-radius: 16px;
   padding: 20px 24px;
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 18px 40px rgba(13, 70, 160, 0.28);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 18px 40px rgba(13, 70, 160, 0.22);
   backdrop-filter: blur(8px);
 }
 
@@ -156,10 +159,13 @@ async function onSubmit() {
   display: grid;
   place-items: center;
   font-weight: 700;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.35), 0 8px 20px rgba(30, 64, 175, 0.35);
 }
 .brand-text h1 {
   margin: 0 0 4px;
-  font-size: 22px;
+  font-size: 28px;
+  color: #ffffff;
+  font-weight: 700;
 }
 .brand-text p {
   margin: 0;
@@ -173,6 +179,16 @@ async function onSubmit() {
   align-items: center;
   justify-content: center;
 }
+.illustration-card {
+  width: 100%;
+  max-width: 820px;
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 18px 40px rgba(13, 70, 160, 0.22);
+  backdrop-filter: blur(6px);
+}
 .brand-svg {
   width: 100%;
   max-width: 760px;
@@ -180,9 +196,9 @@ async function onSubmit() {
 }
 .brand-illustration {
   width: 100%;
-  max-width: 760px;
   height: auto;
   display: block;
+  border-radius: 12px;
 }
 
 .feature-list {
@@ -211,19 +227,34 @@ async function onSubmit() {
   max-width: 420px;
   padding: 28px;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.28);
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  box-shadow: 0 18px 40px rgba(13, 70, 160, 0.30);
-  backdrop-filter: blur(8px);
+  position: relative;
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 18px 40px rgba(13, 70, 160, 0.26);
+  backdrop-filter: blur(12px);
+}
+
+.login-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.6), rgba(14, 165, 233, 0.45));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
 }
 
 h2 {
   margin: 0 0 8px;
+  letter-spacing: 0.4px;
 }
 .subtitle {
   margin: 0 0 18px;
   font-size: 13px;
-  opacity: 0.85;
+  color: #475569;
 }
 
 h1 {
@@ -239,20 +270,25 @@ h1 {
 
   label {
     font-size: 14px;
+    color: #1f2937;
   }
 
   input {
-    height: 38px;
+    height: 40px;
     padding: 0 12px;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    background: rgba(0, 10, 40, 0.15);
-    color: inherit;
+    border-radius: 10px;
+    border: 1px solid rgba(59, 130, 246, 0.18);
+    background: rgba(255, 255, 255, 0.92);
+    color: #0f172a;
     outline: none;
 
     &:focus {
       border-color: #3b82f6;
-      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.35);
+      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.18);
+    }
+
+    &::placeholder {
+      color: #94a3b8;
     }
   }
 }
@@ -279,16 +315,18 @@ h1 {
 
 .submit-btn {
   width: 100%;
-  height: 40px;
-  border-radius: 8px;
-  border: 1px solid transparent;
-  background: #2563eb;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
   color: #fff;
   cursor: pointer;
   transition: 0.2s ease;
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.35);
 
   &:hover {
-    background: #1d4ed8;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    transform: translateY(-1px);
   }
   &:disabled {
     opacity: 0.6;
