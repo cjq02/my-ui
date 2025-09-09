@@ -70,6 +70,7 @@ onBeforeUnmount(() => {
         <router-link to="/login-a">方案A</router-link>
         <router-link to="/login-b">方案B</router-link>
         <router-link to="/login-c">方案C</router-link>
+        <router-link to="/login-d">方案D</router-link>
         <button class="nav-toggle" @click="toggleTopNav">隐藏导航</button>
       </div>
     </nav>
@@ -82,7 +83,7 @@ onBeforeUnmount(() => {
     >显示导航</button>
     <router-view />
   </div>
-  
+
 </template>
 
 <style scoped>
