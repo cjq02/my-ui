@@ -46,7 +46,7 @@
       </section>
     </div>
   </div>
-  
+
 </template>
 
 <script setup lang="ts">
@@ -103,7 +103,7 @@ async function onSubmit() {
 .decor-glow--br { right: -10vw; bottom: -10vw; background: radial-gradient(closest-side, #0ea5e9, transparent); }
 
 .login-layout { width: min(92vw, calc(92vh * (16 / 9))); aspect-ratio: 16 / 9; height: auto; display: grid; grid-template-columns: 1.25fr 1fr; gap: 32px; padding: 32px; position: relative; z-index: 1; }
-.brand-panel { display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; padding: 20px 24px; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.18); box-shadow: 0 18px 40px rgba(13, 70, 160, 0.22); backdrop-filter: blur(8px); }
+.brand-panel { display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; padding: 20px 24px;backdrop-filter: blur(8px); }
 .brand-header { display: flex; align-items: center; gap: 14px; }
 .logo-circle { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #3b82f6, #0ea5e9); display: grid; place-items: center; font-weight: 700; box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.35), 0 8px 20px rgba(30, 64, 175, 0.35); }
 .brand-text h1 { margin: 0 0 4px; font-size: 28px; color: #ffffff; font-weight: 700; }
@@ -113,7 +113,7 @@ async function onSubmit() {
 .brand-illustration { width: 100%; height: auto; display: block; border-radius: 12px; }
 
 .form-panel { display: flex; align-items: center; justify-content: center; }
-.login-card { width: 100%; max-width: 420px; padding: 28px; border-radius: 14px; position: relative; background: rgba(255, 255, 255, 0.42); border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 18px 40px rgba(13, 70, 160, 0.26); backdrop-filter: blur(12px); }
+.login-card { width: 100%; max-width: 420px; padding: 28px; border-radius: 14px; position: relative; background: rgba(255, 255, 255, 1); border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 18px 40px rgba(13, 70, 160, 0.26); backdrop-filter: blur(12px); }
 .login-card::before { content: ""; position: absolute; inset: 0; border-radius: 14px; padding: 1px; background: linear-gradient(135deg, rgba(59, 130, 246, 0.6), rgba(14, 165, 233, 0.45)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
 h2 { margin: 0 0 8px; letter-spacing: 0.4px; }
 .subtitle { margin: 0 0 18px; font-size: 13px; color: #475569; }
@@ -125,8 +125,8 @@ h1 { margin: 0 0 18px; font-size: 22px; }
 .form-item input::placeholder { color: #94a3b8; }
 .form-actions { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; font-size: 13px; }
 .remember { display: inline-flex; align-items: center; gap: 6px; }
-.link { color: #93c5fd; text-decoration: none; }
-.link:hover { color: #bfdbfe; }
+.link { color: #2563EB; text-decoration: none; }
+.link:hover { color: #4F46E5; }
 .submit-btn { width: 100%; height: 42px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.35); background: linear-gradient(135deg, #3b82f6, #2563eb); color: #fff; cursor: pointer; transition: 0.2s ease; box-shadow: 0 10px 24px rgba(37, 99, 235, 0.35); }
 .submit-btn:hover { background: linear-gradient(135deg, #2563eb, #1d4ed8); transform: translateY(-1px); }
 .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }

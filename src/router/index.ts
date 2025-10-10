@@ -5,7 +5,7 @@ const routes: RouteRecordRaw[] = [
   { path: '/login-a', name: 'LoginA', component: () => import('@/views/LoginA.vue') },
   { path: '/login-b', name: 'LoginB', component: () => import('@/views/LoginB.vue') },
   { path: '/login-c', name: 'LoginC', component: () => import('@/views/LoginC.vue') },
-  { path: '/login-d', name: 'LoginC', component: () => import('@/views/LoginD.vue') },
+  { path: '/login-d', name: 'LoginD', component: () => import('@/views/LoginD.vue') },
   { path: '/', redirect: '/login-a' }
 ]
 
