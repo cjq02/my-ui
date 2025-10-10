@@ -2,6 +2,7 @@
   <div>
     <nav class="top-nav" v-show="showTopNav">
       <div class="nav-left">
+        <button class="nav-button" @click="goHome">返回首页</button>
       </div>
       <div class="nav-links">
         <div
@@ -12,7 +13,6 @@
         >
           {{ theme.name }}
         </div>
-        <button class="nav-button" @click="goHome">返回首页</button>
         <button class="nav-toggle" @click="toggleTopNav">隐藏导航</button>
       </div>
     </nav>
