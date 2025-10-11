@@ -3,23 +3,39 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "packageManager": "pnpm@10.17.0",
+  "engines": {
+    "node": ">=18.18.0",
+    "pnpm": ">=10.17.0"
+  },
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "dev": "vite --mode dev --host",
+    "build:dev": "vite build --mode  dev",
+    "preview": "yarn run build && vite preview ",
+    "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
-    "vue": "^3.5.18",
-    "vue-router": "4"
+    "vue": "3.5.21",
+    "vue-router": "4.4.5"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "svg-baker",
+        "postcss"
+      ]
+    }
   },
   "devDependencies": {
-    "@types/node": "^24.3.0",
-    "@vitejs/plugin-vue": "^6.0.1",
+    "@types/node": "^15.14.9",
+    "@vitejs/plugin-vue": "5.1.4",
     "@vue/tsconfig": "^0.7.0",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
     "sass": "^1.90.0",
+    "tailwindcss": "3.4.17",
     "typescript": "~5.8.3",
-    "vite": "^7.1.2",
-    "vue-tsc": "^3.0.5"
-  },
-  "packageManager": "pnpm@10.4.0+sha512.6b849d0787d97f8f4e1f03a9b8ff8f038e79e153d6f11ae539ae7c435ff9e796df6a862c991502695c7f9e8fac8aeafc1ac5a8dab47e36148d183832d886dd52"
+    "vite": "5.4.10",
+    "vue-tsc": "2.1.6"
+  }
 }
