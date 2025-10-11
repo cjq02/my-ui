@@ -1,0 +1,167 @@
+<template>
+  <div class="login-page">
+    <div class="login-container">
+      <div class="min-h-screen  flex items-center justify-center p-4">
+        <!-- 主容器 -->
+        <div class="w-full max-w-6xl  overflow-hidden login-inner">
+          <div class="grid md:grid-cols-2 gap-0">
+            <!-- 左侧欢迎区域 -->
+            <div class="login-pic p-8 md:p-12 flex flex-col justify-center relative overflow-hidden">
+
+              <!-- 欢迎文本 -->
+              <div class="relative z-10">
+                <p class="text-3xl font-bold text-gray-800 mb-8">XXX采购管理系统</p>
+
+                <!-- 3D插图区域 -->
+                <div class="relative h-64 md:h-80 w-full mt-20">
+
+                  <img src="@/assets/img/login/internalControl/loginC-pic.png"  class="bg-image w-full h-full object-contain" loading="lazy"/>
+                </div>
+              </div>
+            </div>
+
+            <!-- 右侧登录区域 -->
+            <div class="login-form  p-8 md:p-12 flex flex-col justify-center">
+              <h2 class="text-2xl font-bold text-gray-800 mb-8">登录</h2>
+
+              <form @submit.prevent="handleLogin" class="space-y-6">
+                <!-- 账号输入 -->
+                <div>
+                  <label for="username" class="block text-sm font-medium text-gray-700 mb-1">系统账号/手机号码</label>
+                  <div class="relative">
+                    <input
+                        type="text"
+                        id="username"
+                        v-model="username"
+                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                        placeholder="请输入账号"
+                        required
+                    >
+                  </div>
+                </div>
+
+                <!-- 密码输入 -->
+                <div>
+                  <div class="flex justify-between items-center mb-1">
+                    <label for="password" class="block text-sm font-medium text-gray-700">账号密码</label>
+                    <a href="#" class="text-sm text-blue-600 hover:text-blue-800 transition-colors">忘记密码</a>
+                  </div>
+                  <div class="relative">
+                    <input
+                        :type="showPassword ? 'text' : 'password'"
+                        id="password"
+                        v-model="password"
+                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                        placeholder="请输入密码"
+                        required
+                    >
+
+                  </div>
+                </div>
+
+                <!-- 记住密码 -->
+                <div class="flex items-center">
+                  <input
+                      type="checkbox"
+                      id="remember"
+                      v-model="rememberMe"
+                      class="w-4 h-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                  >
+                  <label for="remember" class="ml-2 block text-sm text-gray-700">记住密码</label>
+                </div>
+
+                <!-- 登录按钮 -->
+                <button
+                    type="submit"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-all transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                >
+                  登录
+                </button>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+
+// 表单数据
+const username = ref('admin');
+const password = ref('test123456');
+const showPassword = ref(false);
+const rememberMe = ref(true);
+
+// 登录处理
+const handleLogin = () => {
+  // 这里添加登录逻辑
+  console.log('登录信息:', {
+    username: username.value,
+    password: password.value,
+    rememberMe: rememberMe.value
+  });
+
+  // 实际应用中应该调用API进行登录验证
+  alert('登录功能将在这里实现');
+};
+</script>
+
+<style scoped>
+/* 基础动画效果 */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* 为插图添加浮动动画 */
+img {
+  animation: float 6s ease-in-out infinite;
+}
+
+.login-page {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+
+  &:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: url('@/assets/img/login/internalControl/loginC-bg.png') top center no-repeat;
+    background-size: cover;
+    content: "";
+  }
+}
+.login-container {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.login-inner{
+position: relative;
+  z-index: 2;
+  opacity: 1;
+  border-radius: 50px;
+
+  background: url('@/assets/img/login/internalControl/loginC-pic-bg.png') top center no-repeat;
+  background-size: cover;
+
+  box-sizing: border-box;
+  border-image: linear-gradient(255.15deg, rgba(180, 210, 255, 1) 0%, rgba(255, 255, 255, 0) 100%) 2;
+}
+
+.login-form{
+  opacity: 1;
+  border-radius: 0px 50px 50px 0px;
+  background: #ffffff;
+
+}
+</style>

@@ -36,7 +36,6 @@
 import LoginA from './LoginA.vue'
 import LoginB from './LoginB.vue'
 import LoginC from './LoginC.vue'
-import LoginD from './LoginD.vue'
 import { ref, onMounted, onBeforeUnmount, reactive, computed } from 'vue'
 import { useRouter } from 'vue-router'
 
@@ -54,6 +53,7 @@ let offsetY = 0
 const themes = [
   { id: 'A', name: '方案A' },
   { id: 'B', name: '方案B' },
+  { id: 'C', name: '方案C' },
 ]
 
 // 根据当前主题动态切换组件
@@ -61,6 +61,7 @@ const currentComponent = computed(() => {
   switch(currentTheme.value) {
     case 'A': return LoginA
     case 'B': return LoginB
+    case 'C': return LoginC
     default: return LoginA
   }
 })

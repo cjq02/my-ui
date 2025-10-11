@@ -8,7 +8,7 @@
         <div class="gov-title">内控管理系统</div>
       </div>
     </div>
-    <img class="bg-image" src="@/assets/img/login/internalControl/loginA-bg.jpg" alt="stadium background" />
+    <img class="bg-image" src="@/assets/img/login/internalControl/loginA-bg.jpg" alt="" />
 
     <div class="container">
       <form class="card" @submit.prevent="onSubmit">
