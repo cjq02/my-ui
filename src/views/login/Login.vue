@@ -1,25 +1,19 @@
 <template>
-  <div>
+  <div class="page">
     <nav class="top-nav" v-show="showTopNav">
       <div class="nav-left">
-        <button class="nav-button" @click="goHome">返回首页</button>
+        <button class="nav-button" @click="goHome">返回导航</button>
+        <button class="nav-button" @click="goHome">进入菜单</button>
       </div>
       <div class="nav-links">
-        <div
-            v-for="(theme, index) in themes"
-            :key="index"
-            :class="{ active: currentTheme === theme.id }"
-            @click="switchTheme(theme.id)"
-        >
-          {{ theme.name }}
-        </div>
-        <button class="nav-toggle" @click="toggleTopNav">隐藏导航</button>
+        <slot name="loginList" />
+        <button class="nav-toggle ml-8" @click="toggleTopNav">隐藏</button>
       </div>
     </nav>
 
     <!-- 主题内容区域 -->
     <div class="theme-content">
-      <component :is="currentComponent" />
+      <slot name="themeContent" />
     </div>
 
     <button
@@ -28,20 +22,16 @@
         :style="{ left: dragPos.x + 'px', top: dragPos.y + 'px' }"
         @click="toggleTopNav"
         @mousedown="onDragStart"
-    >显示导航</button>
+    >显示</button>
   </div>
 </template>
 
 <script setup lang="ts">
-import LoginA from './LoginA.vue'
-import LoginB from './LoginB.vue'
-import LoginC from './LoginC.vue'
-import LoginD from './LoginD.vue'
+
 import { ref, onMounted, onBeforeUnmount, reactive, computed } from 'vue'
 import { useRouter } from 'vue-router'
 
 const showTopNav = ref(true)
-const currentTheme = ref('A')
 const router = useRouter()
 
 // 悬浮按钮拖拽（在导航隐藏时出现）
@@ -49,29 +39,6 @@ const dragPos = reactive({ x: 0, y: 0 })
 const dragging = ref(false)
 let offsetX = 0
 let offsetY = 0
-
-// 主题配置
-const themes = [
-  { id: 'A', name: '方案A' },
-  { id: 'B', name: '方案B' },
-  { id: 'C', name: '方案C' },
-  { id: 'D', name: '方案D' }
-]
-
-// 根据当前主题动态切换组件
-const currentComponent = computed(() => {
-  switch(currentTheme.value) {
-    case 'A': return LoginA
-    case 'B': return LoginB
-    case 'C': return LoginC
-    case 'D': return LoginD
-    default: return LoginA
-  }
-})
-
-function switchTheme(themeId: string) {
-  currentTheme.value = themeId
-}
 
 function goHome() {
   router.push('/')
@@ -148,7 +115,7 @@ onBeforeUnmount(() => {
   padding: 0 16px;
   z-index: 10;
   color: #e2e8f0;
-  background: linear-gradient(180deg, rgba(3, 7, 18, 0.45), rgba(3, 7, 18, 0));
+  background: linear-gradient(180deg, rgba(3, 7, 18, 0.8), rgba(3, 7, 18, 0.5));
   backdrop-filter: blur(8px);
 }
 
@@ -168,22 +135,6 @@ onBeforeUnmount(() => {
   align-items: center;
 }
 
-.nav-links > div {
-  color: #e2e8f0;
-  text-decoration: none;
-  padding: 4px 8px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.nav-links > div:hover {
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.nav-links > div.active {
-  background: rgba(255, 255, 255, 0.25);
-}
 
 .nav-button {
   height: 30px;
@@ -221,9 +172,30 @@ onBeforeUnmount(() => {
   z-index: 20;
   cursor: pointer;
 }
-
-.theme-content {
-  margin-top: 60px;
-  padding: 20px;
+.page{
+  height: 100%;
 }
+.theme-content {
+  height: 100%;
+
+}
+</style>
+<style>
+ .nav-item {
+  color: #e2e8f0;
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+
+ .nav-item.active {
+   background: rgba(255, 255, 255, 0.25);
+ }
 </style>
