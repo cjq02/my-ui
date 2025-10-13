@@ -5,7 +5,7 @@
         <div class="logo-title">
           <!-- 这里可以替换为实际的logo图片 -->
           <div class="logo">
-            <img class="bg-image" src="@/assets/img/login/internalControl/loginB-logo.png"  />
+            <img class="bg-image" src="@/assets/img/login/internalControl/loginB/login-logo.png"  />
           </div>
           <h1>智能合同管控系统</h1>
         </div>
@@ -65,7 +65,7 @@ const handleLogin = () => {
     z-index: -1;
     width: 100%;
     height: 100%;
-    background: url('@/assets/img/login/internalControl/loginB-bg.png') top center no-repeat;
+    background: url('@/assets/img/login/internalControl/loginB/login-bg.png') top center no-repeat;
     background-size: cover;
     filter: blur(1.5px) brightness(1) contrast(1) hue-rotate(0deg);
     content: "";
@@ -119,7 +119,7 @@ const handleLogin = () => {
 }
 
 .logo-title h1 {
-  font-size: 22px;
+  font-size: 28px;
   color: #333;
 }
 .form-group {
@@ -169,7 +169,7 @@ const handleLogin = () => {
 .illustration {
   width: 100%;
   height: 100%;
-  background: url('@/assets/img/login/internalControl/loginB-pic.png') no-repeat center;
+  background: url('@/assets/img/login/internalControl/loginB/login-pic.png') no-repeat center;
   background-size: cover;
 }
 

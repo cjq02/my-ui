@@ -115,7 +115,7 @@ onBeforeUnmount(() => {
   padding: 0 16px;
   z-index: 10;
   color: #e2e8f0;
-  background: linear-gradient(180deg, rgba(3, 7, 18, 0.8), rgba(3, 7, 18, 0.5));
+  background: linear-gradient(180deg, rgba(3, 7, 18, 0.4), rgba(3, 7, 18, 0));
   backdrop-filter: blur(8px);
 }
 

@@ -14,9 +14,9 @@
               <div class="relative z-10">
 
                 <!-- 3D插图区域 -->
-                <div class="relative h-64 md:h-80 w-full mt-5">
+                <div class="relative w-full ">
 
-                  <img src="@/assets/img/login/internalControl/loginC-pic.png"  class="bg-image w-full h-full object-contain" loading="lazy"/>
+                  <img src="@/assets/img/login/internalControl/loginC/login-pic.png"  class="bg-image w-full h-full object-contain" loading="lazy"/>
                 </div>
               </div>
             </div>
@@ -123,7 +123,7 @@ const handleLogin = () => {
 
 /* 为插图添加浮动动画 */
 img {
-  animation: float 6s ease-in-out infinite;
+  //animation: float 6s ease-in-out infinite;
 }
 
 .login-page {
@@ -138,7 +138,7 @@ img {
     z-index: -1;
     width: 100%;
     height: 100%;
-    background: url('@/assets/img/login/internalControl/loginC-bg.png') top center no-repeat;
+    background: url('@/assets/img/login/internalControl/loginC/login-bg.png') top center no-repeat;
     background-size: cover;
     content: "";
   }
@@ -153,8 +153,9 @@ img {
 position: relative;
   z-index: 2;
   opacity: 1;
-  background: rgba(239, 246, 255, 1) url('@/assets/img/login/internalControl/loginC-pic-bg.png') top center no-repeat;
-  background-size: cover;
+  //background: rgba(239, 246, 255, 1) url('@/assets/img/login/internalControl/loginC/login-pic-bg.png') top center no-repeat;
+  //background-size: cover;
+  background-color: rgba(239, 246, 255, 1);
   border-radius: 20px;
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1), 0px 17px 36px rgba(0,0, 90, 0.25);
   box-sizing: border-box;
@@ -169,7 +170,7 @@ position: relative;
 
 }
 .login-pic{
-  padding:20px 40px 20px 40px;
+  padding:0
 }
 .login-title{
   position: absolute;
@@ -179,7 +180,7 @@ position: relative;
   top: -100px;
   height: 70px;
   animation: fade-in-down 1s ease-out .2s both;
-color: #333333;
+color: #ffffff;
   font-size: 34px;
 }
 .login-bottom {
@@ -190,6 +191,6 @@ color: #333333;
   width: 100%;
   text-align: center;
   font-size: 14px;
-  color: #333333;
+  color: #ffffff;
 }
 </style>

@@ -5,10 +5,10 @@
     <div class="page-title">
       <div class="brand-row">
         <div class="mark">内</div>
-        <div class="gov-title">内控管理系统</div>
+        <div class="gov-title">精益运营数字化平台</div>
       </div>
     </div>
-    <img class="bg-image" src="@/assets/img/login/internalControl/loginA-bg.jpg" alt="" />
+    <img class="bg-image" src="@/assets/img/login/internalControl/loginA/login-bg.jpg" alt="" />
 
     <div class="container">
       <form class="card" @submit.prevent="onSubmit">

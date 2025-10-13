@@ -19,6 +19,7 @@
 <script setup lang="ts">
 import Login from '../Login.vue'
 import LoginA from './LoginA.vue'
+import LoginB from './LoginB.vue'
 import { ref,computed } from 'vue'
 
 
@@ -27,10 +28,12 @@ const currentTheme = ref('A')
 // 主题配置
 const themes = [
   { id: 'A', name: '登录页A' },
+  { id: 'B', name: '登录页B' },
 ]
 const currentComponent = computed(() => {
   switch(currentTheme.value) {
     case 'A': return LoginA
+    case 'B': return LoginB
     default: return LoginA
   }
 })
