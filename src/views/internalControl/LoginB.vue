@@ -34,6 +34,7 @@
         <div class="illustration"></div>
       </div>
     </div>
+    <div  class="login-bottom">Copyright © 九阶（厦门）信息科技有限公司</div>
   </div>
 </template>
 
@@ -57,7 +58,6 @@ const handleLogin = () => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
   &:before {
     position: absolute;
     left: 0;
@@ -83,9 +83,10 @@ const handleLogin = () => {
 }
 
 .login-container {
-  width: 950px;
-  height: 350px;
+  width: 1000px;
+  height: 400px;
   position: relative;
+  top:-5%;
   display: flex;
   background-color: #fff;
   border-radius: 15px;
@@ -106,7 +107,8 @@ const handleLogin = () => {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 30px;
   justify-content: center;
 }
 
@@ -177,5 +179,16 @@ const handleLogin = () => {
   right: 20px;
   color: #fff;
   font-size: 14px;
+}
+.login-bottom {
+  position: absolute;
+  left:0;
+  bottom: 15px;
+  padding-bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: #ffffff;
+  z-index: 2;
 }
 </style>

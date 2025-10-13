@@ -41,7 +41,7 @@ import { ref, onMounted, onBeforeUnmount, reactive, computed } from 'vue'
 import { useRouter } from 'vue-router'
 
 const showTopNav = ref(true)
-const currentTheme = ref('D')
+const currentTheme = ref('A')
 const router = useRouter()
 
 // 悬浮按钮拖拽（在导航隐藏时出现）

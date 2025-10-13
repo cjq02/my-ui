@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page">
     <nav class="top-nav" v-show="showTopNav">
       <div class="nav-left">
         <button class="nav-button" @click="goHome">返回首页</button>
@@ -36,6 +36,7 @@
 import LoginA from './LoginA.vue'
 import LoginB from './LoginB.vue'
 import LoginC from './LoginC.vue'
+import LoginD from './LoginD.vue'
 import { ref, onMounted, onBeforeUnmount, reactive, computed } from 'vue'
 import { useRouter } from 'vue-router'
 
@@ -54,6 +55,7 @@ const themes = [
   { id: 'A', name: '方案A' },
   { id: 'B', name: '方案B' },
   { id: 'C', name: '方案C' },
+  { id: 'D', name: '方案D' },
 ]
 
 // 根据当前主题动态切换组件
@@ -62,6 +64,7 @@ const currentComponent = computed(() => {
     case 'A': return LoginA
     case 'B': return LoginB
     case 'C': return LoginC
+    case 'D': return LoginD
     default: return LoginA
   }
 })
@@ -218,7 +221,11 @@ onBeforeUnmount(() => {
   z-index: 20;
   cursor: pointer;
 }
-
+.page{
+  height: 100%;
+}
 .theme-content {
+  height: 100%;
+
 }
 </style>

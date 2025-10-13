@@ -2,18 +2,19 @@
   <div class="login-page">
     <div class="login-container">
       <div class="min-h-screen  flex items-center justify-center p-4">
+
         <!-- 主容器 -->
-        <div class="w-full max-w-6xl  overflow-hidden login-inner">
+        <div class="w-full max-w-5xl   login-inner">
+          <p class="text-2xl font-bold text-gray-800 login-title">精益运营数字化平台</p>
           <div class="grid md:grid-cols-2 gap-0">
             <!-- 左侧欢迎区域 -->
             <div class="login-pic p-8 md:p-12 flex flex-col justify-center relative overflow-hidden">
 
               <!-- 欢迎文本 -->
               <div class="relative z-10">
-                <p class="text-3xl font-bold text-gray-800 mb-8">XXX采购管理系统</p>
 
                 <!-- 3D插图区域 -->
-                <div class="relative h-64 md:h-80 w-full mt-20">
+                <div class="relative h-64 md:h-80 w-full mt-5">
 
                   <img src="@/assets/img/login/internalControl/loginC-pic.png"  class="bg-image w-full h-full object-contain" loading="lazy"/>
                 </div>
@@ -22,7 +23,7 @@
 
             <!-- 右侧登录区域 -->
             <div class="login-form  p-8 md:p-12 flex flex-col justify-center">
-              <h2 class="text-2xl font-bold text-gray-800 mb-8">登录</h2>
+              <h2 class="text-2xl font-bold text-gray-800 mb-8">登&nbsp;&nbsp;录</h2>
 
               <form @submit.prevent="handleLogin" class="space-y-6">
                 <!-- 账号输入 -->
@@ -83,6 +84,8 @@
           </div>
         </div>
       </div>
+      <div  class="login-bottom">Copyright © 九阶（厦门）信息科技有限公司</div>
+
     </div>
 
   </div>
@@ -141,6 +144,7 @@ img {
   }
 }
 .login-container {
+  position: relative;
   width: 100%;
   height: 100%;
   z-index: 1;
@@ -149,19 +153,43 @@ img {
 position: relative;
   z-index: 2;
   opacity: 1;
-  border-radius: 50px;
-
-  background: url('@/assets/img/login/internalControl/loginC-pic-bg.png') top center no-repeat;
+  background: rgba(239, 246, 255, 1) url('@/assets/img/login/internalControl/loginC-pic-bg.png') top center no-repeat;
   background-size: cover;
-
+  border-radius: 20px;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1), 0px 17px 36px rgba(0,0, 90, 0.25);
   box-sizing: border-box;
   border-image: linear-gradient(255.15deg, rgba(180, 210, 255, 1) 0%, rgba(255, 255, 255, 0) 100%) 2;
 }
 
 .login-form{
+  padding:20px 40px 30px 40px;
   opacity: 1;
-  border-radius: 0px 50px 50px 0px;
+  border-radius: 0px 30px 30px 0px;
   background: #ffffff;
 
+}
+.login-pic{
+  padding:20px 40px 20px 40px;
+}
+.login-title{
+  position: absolute;
+  left:0;
+  width: 100%;
+  text-align: center;
+  top: -100px;
+  height: 70px;
+  animation: fade-in-down 1s ease-out .2s both;
+color: #333333;
+  font-size: 34px;
+}
+.login-bottom {
+  position: absolute;
+  left:0;
+  bottom: 15px;
+  padding-bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: #333333;
 }
 </style>
