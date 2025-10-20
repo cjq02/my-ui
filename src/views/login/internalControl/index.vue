@@ -32,6 +32,8 @@ import LoginC from './LoginC.vue'
 import LoginD from './LoginD.vue'
 import LoginE from './LoginE.vue'
 import LoginF from './LoginF.vue'
+import LoginG from './LoginG.vue'
+import LoginH from './LoginH.vue'
 import { ref,computed } from 'vue'
 
 
@@ -39,12 +41,14 @@ const currentTheme = ref('A')
 
 // 主题配置
 const themes = [
-  { id: 'A', name: '登录页A',remark:'资产' },
-  { id: 'B', name: '登录页B',remark:'预算' },
-  { id: 'C', name: '登录页C',remark:'支付' },
-  { id: 'D', name: '登录页D' ,remark:'合同'},
-  { id: 'E', name: '登录页E',remark:'其他' },
-  { id: 'F', name: '登录页F' ,remark:'其他'},
+  { id: 'A', name: '登录页A',remark:'合同' },
+  { id: 'B', name: '登录页B',remark:'采购' },
+  { id: 'C', name: '登录页C',remark:'销售' },
+  { id: 'D', name: '登录页D' ,remark:'资产'},
+  { id: 'E', name: '登录页E',remark:'预算' },
+  { id: 'F', name: '登录页F' ,remark:'支付'},
+  { id: 'G', name: '登录页E',remark:'其他' },
+  { id: 'H', name: '登录页F' ,remark:'其他'},
 ]
 const currentComponent = computed(() => {
   switch(currentTheme.value) {
@@ -54,6 +58,8 @@ const currentComponent = computed(() => {
     case 'D': return LoginD
     case 'E': return LoginE
     case 'F': return LoginF
+    case 'G': return LoginG
+    case 'H': return LoginH
     default: return LoginA
   }
 })
