@@ -12,7 +12,7 @@
         <div class="login-pic">
 
           <div class="login-img">
-            <img src="@/assets/img/login/internalControl/loginE/login-pic.png" alt="">
+            <img src="@/assets/img/login/internalControl/loginE/login-pic2.png" alt="">
           </div>
         </div>
 
@@ -242,9 +242,11 @@ $cursor: #fff;
     position: absolute;
     left: 50%;
     top: 50%;
-    margin-top: 60px;
+    margin-top: 6%;
     text-align: right;
     transform: translate(-50%, -50%);
+    width: 50%;
+    max-width: 650px;
     img {
       max-width: 100%;
       //height: 100%;
@@ -424,7 +426,7 @@ $cursor: #fff;
       margin-top: -10%;
     }
     .login-img {
-      width: 70%;
+      width: 50%;
       //margin-left:5%
     }
     .login-form {
