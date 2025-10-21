@@ -2,11 +2,7 @@
   <div class="login-container">
     <div class="login-bg"></div>
     <div class="inner">
-      <div class="title-container">
-        <h3 class="title">
-          <span>高校系统管理平台</span>
-        </h3>
-      </div>
+
       <div class="login-inner">
         <div class="login-pic">
 
@@ -15,8 +11,13 @@
           </div>
         </div>
 
-        <div id="login-info" class="login-info">
+        <div class="login-info">
           <div class="login-con clearfix">
+            <div class="title-container">
+              <h3 class="title">
+                <span>高校系统管理平台</span>
+              </h3>
+            </div>
             <div class="login-form">
               <div class="txt">登录</div>
               <el-form ref="formRef" :model="model" auto-complete="on" label-position="left">
@@ -218,7 +219,7 @@ $light_gray: #eee;
     //right: 0!important;
     //top: 0;
     position: relative;
-    width: 600px;
+    width: 40%;
     min-width: 600px;
     height: 100%;
     background-size: 100% 100%;
@@ -232,27 +233,26 @@ $light_gray: #eee;
       width: 520px;
       text-align: center;
       font-size: 14px;
-      color: #43507e;
+      color: #333333;
     }
   }
   .login-pic{
     position: relative;
     flex:1;
-    background: url('@/assets/img/login/education/loginB/login-pic-bg.png') top center no-repeat;
-    background-size: 100% 100%;
+    background:#8dd8d9
   }
   .login-img {
     position: absolute;
     left: 50%;
     top: 50%;
-    margin-top: 60px;
-    height: 55%;
-    text-align: right;
+    width: 100%;
+    height: 75%;
     transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
     img {
       max-width: 100%;
       height: 100%;
-      min-height: 70%;
     }
   }
   .login-con {
@@ -308,33 +308,18 @@ $light_gray: #eee;
     color: #889aa4;
   }
   .title-container {
-    position: absolute;
-    left: 5%;
-    top: 10%;
-    z-index: 1;
     //margin-top: -100px;
     .title {
-      margin: 0 auto 10px;
       line-height: 80px;
-      font-family: '微软雅黑', serif;
-      font-weight: bold;
-      font-size: 48px;
-      color: $cursor;
       letter-spacing: 3px;
-      .pic {
-        float: left;
-        margin-right: 30px;
-        margin-top: 5px;
-        height: 70px;
-        font-size: 0;
-      }
+      text-align: center;
+
       span {
-        width: 941px;
         height: 75px;
         line-height: 75px;
         font-family: MicrosoftYaHei-Bold, MicrosoftYaHei, sans-serif;
         font-weight: bold;
-        font-size: 52px;
+        font-size: 40px;
         color: #333
       }
     }
@@ -383,11 +368,11 @@ $light_gray: #eee;
     transition: all 0.3s ease-in;
 
 
-    background: linear-gradient(90deg, rgba(128, 117, 238, 1)   0%,rgba(89, 65, 205, 1) 100%);
+    background: linear-gradient(90deg, rgba(0, 186, 199, 1)   0%,rgba(20, 157, 167, 1) 100%);
 
 
     &:hover {
-      background: linear-gradient(180deg, rgba(89, 65, 205, 1) 0%, rgba(128, 117, 238, 1) 100%);
+      background: linear-gradient(180deg, rgba(20, 157, 167, 1) 0%, rgba(0, 186, 199, 1) 100%);
     }
   }
 }
@@ -401,41 +386,6 @@ $light_gray: #eee;
   text-align: center;
   font-size: 14px;
   color: $bg;
-}
-@media screen and (max-width: 1440px) {
-  .login-container {
-    .title-container {
-      //margin-top: -60px;
-      .title {
-        line-height: 55px;
-        font-size: 36px;
-        span {
-          line-height: 55px;
-          font-size: 46px;
-        }
-        .pic {
-          margin-right: 20px;
-          height: 55px;
-        }
-      }
-    }
-    .login-info {
-      //right: 5%;
-      width: 420px;
-      min-width: 420px;
-    }
-    .login-con {
-      margin-top: -10%;
-    }
-    .login-img {
-      width: 70%;
-      margin-left:5%
-    }
-    .login-form {
-      padding: 20px 8% 15px;
-
-    }
-  }
 }
 
 

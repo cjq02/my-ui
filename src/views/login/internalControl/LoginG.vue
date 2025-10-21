@@ -102,7 +102,7 @@ const rememberMe = ref(true);
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 /* 基础动画效果 */
 @keyframes float {
   0%, 100% { transform: translateY(0); }

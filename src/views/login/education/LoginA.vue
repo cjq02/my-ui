@@ -4,20 +4,14 @@
       <div class="min-h-screen  flex items-center justify-center p-4">
 
         <!-- 主容器 -->
-        <div class="w-full max-w-5xl   login-inner">
-          <p class="text-2xl font-bold text-gray-800 login-title">高校系统管理平台</p>
-          <div class="grid md:grid-cols-2 gap-0">
+        <div class="w-full max-w-5xl  login-inner flex">
+
             <!-- 左侧欢迎区域 -->
-            <div class="login-pic p-8 md:p-12 flex flex-col justify-center relative overflow-hidden">
+            <div class="login-pic p-8 md:p-12  flex-1  relative">
 
-              <!-- 欢迎文本 -->
-              <div class="relative z-10">
+              <div class="relative h-64 md:h-80 w-full mt-5">
+                <p class="text-2xl font-bold text-gray-800 login-title">高校系统管理平台</p>
 
-                <!-- 3D插图区域 -->
-                <div class="relative h-64 md:h-80 w-full mt-5">
-
-                  <img src="@/assets/img/login/education/loginA/login-pic.png"  class="bg-image w-full h-full object-contain" loading="lazy"/>
-                </div>
               </div>
             </div>
 
@@ -72,22 +66,23 @@
                 </div>
 
                 <!-- 登录按钮 -->
-                <button
-                    type="submit"
-                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-all transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                <el-button
+                    class="login-btn"
+                    type="primary"
+                    style="width: 100%"
                 >
                   登录
-                </button>
+                </el-button>
               </form>
 
             </div>
-          </div>
+
         </div>
       </div>
       <div  class="login-bottom">Copyright © 九阶（厦门）信息科技有限公司</div>
 
     </div>
-
+    <div class="bottomBgc"></div>
   </div>
 </template>
 
@@ -114,7 +109,7 @@ const handleLogin = () => {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 /* 基础动画效果 */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
@@ -131,17 +126,6 @@ img {
   height: 100vh;
   position: relative;
 
-  &:before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    background: url('@/assets/img/login/education/loginA/login-bg.png') top center no-repeat;
-    background-size: cover;
-    content: "";
-  }
 }
 .login-container {
   position: relative;
@@ -150,11 +134,13 @@ img {
   z-index: 1;
 }
 .login-inner{
-position: relative;
+  position: relative;
+  width: 1050px;
+  height: 527px;
   z-index: 2;
   opacity: 1;
-  background: rgba(239, 246, 255, 1) url('@/assets/img/login/education/loginA/login-pic-bg.png') top center no-repeat;
-  background-size: cover;
+  background: #ffffff url('@/assets/img/login/education/loginA/login-pic.png') 20px center no-repeat;
+  background-size: contain;
   border-radius: 20px;
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1), 0px 17px 36px rgba(0,0, 90, 0.25);
   box-sizing: border-box;
@@ -162,34 +148,52 @@ position: relative;
 }
 
 .login-form{
-  padding:20px 40px 30px 40px;
+  padding:40px 40px 40px 40px;
   opacity: 1;
   border-radius: 0px 30px 30px 0px;
   background: #ffffff;
+  width: 420px;
 
-}
-.login-pic{
-  padding:20px 40px 20px 40px;
+  box-shadow: -1px 0 2px #0202021a;
 }
 .login-title{
   position: absolute;
   left:0;
   width: 100%;
   text-align: center;
-  top: -100px;
+  top:-25px;
   height: 70px;
   animation: fade-in-down 1s ease-out .2s both;
-color: #333333;
-  font-size: 34px;
+  color: #333333;
+  font-size: 30px;
 }
 .login-bottom {
   position: absolute;
   left:0;
-  bottom: 15px;
+  bottom: 0;
   padding-bottom: 10px;
   width: 100%;
   text-align: center;
   font-size: 14px;
   color: #333333;
+}
+.bottomBgc {
+  position: absolute;
+  bottom: 0;
+  height: 194px;
+  width: 100%;
+  background-image: url('@/assets/img/login/education/loginA/loginBG.svg');
+}
+.login-btn {
+  margin: 3% auto 5%;
+  padding: 0;
+  border: none;
+  width: 100%;
+  height: 52px;
+  line-height: 52px;
+  font-size: 18px;
+  color: #fff;
+  transition: all 0.3s ease-in;
+  border-radius: 27px;
 }
 </style>

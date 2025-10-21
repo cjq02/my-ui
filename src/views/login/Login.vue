@@ -102,7 +102,7 @@ onBeforeUnmount(() => {
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .top-nav {
   position: fixed;
   top: 0;

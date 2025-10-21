@@ -65,7 +65,7 @@ const handleForgetPassword = () => {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .login-container {
   position: relative;
   display: flex;

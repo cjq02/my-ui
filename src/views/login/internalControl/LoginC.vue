@@ -16,7 +16,7 @@
                 <!-- 3D插图区域 -->
                 <div class="relative h-64 md:h-80 w-full mt-5">
 
-                  <img src="@/assets/img/login/education/loginA/login-pic.png"  class="bg-image w-full h-full object-contain" loading="lazy"/>
+                  <img src="@/assets/img/login/internalControl/loginC/login-pic.png"  class="bg-image w-full h-full object-contain" loading="lazy"/>
                 </div>
               </div>
             </div>
@@ -114,7 +114,7 @@ const handleLogin = () => {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 /* 基础动画效果 */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
@@ -138,7 +138,7 @@ img {
     z-index: -1;
     width: 100%;
     height: 100%;
-    background: url('@/assets/img/login/education/loginA/login-bg.png') top center no-repeat;
+    background: url('@/assets/img/login/internalControl/loginC/login-bg.png') top center no-repeat;
     background-size: cover;
     content: "";
   }
@@ -153,7 +153,7 @@ img {
   position: relative;
   z-index: 2;
   opacity: 1;
-  background: rgba(239, 246, 255, 1) url('@/assets/img/login/education/loginA/login-pic-bg.png') top center no-repeat;
+  background: rgba(239, 246, 255, 1) url('@/assets/img/login/internalControl/loginC/login-pic-bg.png') top center no-repeat;
   background-size: cover;
   border-radius: 20px;
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1), 0px 17px 36px rgba(0,0, 90, 0.25);

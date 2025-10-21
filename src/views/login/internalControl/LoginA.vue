@@ -51,7 +51,7 @@ const handleLogin = () => {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .login-page {
   width: 100vw;
   height: 100vh;

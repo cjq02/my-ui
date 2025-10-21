@@ -104,7 +104,7 @@ const handleLogin = () => {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 /* 基础动画效果 */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
@@ -144,12 +144,9 @@ img {
   right: 12%;
   z-index: 2;
   opacity: 1;
-  background: rgba(239, 246, 255, 1) url('@/assets/img/login/education/loginA/login-pic-bg.png') top center no-repeat;
-  background-size: cover;
   border-radius: 20px;
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1), 0px 17px 36px rgba(0,0, 90, 0.25);
   box-sizing: border-box;
-  border-image: linear-gradient(255.15deg, rgba(180, 210, 255, 1) 0%, rgba(255, 255, 255, 0) 100%) 2;
 
   width: 500px;
 }
@@ -161,9 +158,6 @@ img {
   background: #ffffff;
 
 }
-.login-pic{
-  padding:20px 40px 20px 40px;
-}
 .login-title{
 
   position: absolute;
@@ -171,7 +165,6 @@ img {
   top: 10%;
   z-index: 1;
   text-align: center;
-  animation: fade-in-down 1s ease-out .2s both;
 
   span {
     margin: 0 auto 10px;
