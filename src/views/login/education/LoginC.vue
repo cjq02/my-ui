@@ -1,75 +1,73 @@
 <template>
   <div class="login-container">
-    <div class="login-bg"></div>
     <div class="inner">
 
       <div class="login-inner">
-        <div class="login-left">
 
-          <div class="login-img">
-            <img src="@/assets/img/login/education/loginB/login-pic.png" alt="">
-          </div>
-        </div>
 
-        <div class="login-right">
+        <div class="login-info">
           <div class="login-logo">
-            <img class="logo" src="@/assets/img/login/education/loginB/logo.png" alt="">
+            <img class="logo" src="@/assets/img/login/education/loginC/logo.png" alt="">
             <div class="title">
               <span>高校系统管理平台</span>
             </div>
           </div>
           <div class="login-con clearfix">
             <div class="login-form">
-              <div class="txt">登录</div>
               <el-form ref="formRef" :model="model" auto-complete="on" label-position="left">
-                <el-form-item prop="username">
-                  <div class="item">
-                    <label class="lab">
-                      <svg class="input-icon" viewBox="0 0 24 24" width="25" height="25">
-                        <path fill="currentColor" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4s-4 1.79-4 4s1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                      </svg>
-                    </label>
-                    <el-input
-                        v-model="model.username"
-                        placeholder="请输入账号"
-                        name="账号"
-                        type="text"
-                        auto-complete="on"
-                    />
-                  </div>
-                </el-form-item>
+              <el-tabs v-model="activeName" class="demo-tabs" >
+                <el-tab-pane label="账号登录" name="first">
+                  <el-form-item prop="username">
+                    <div class="item">
+                      <label class="lab">
+                        <svg class="input-icon" viewBox="0 0 24 24" width="25" height="25">
+                          <path fill="currentColor" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4s-4 1.79-4 4s1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                      </label>
+                      <el-input
+                          v-model="model.username"
+                          placeholder="请输入账号"
+                          name="账号"
+                          type="text"
+                          auto-complete="on"
+                      />
+                    </div>
+                  </el-form-item>
 
-                <el-form-item prop="password">
-                  <div class="flex">
-                    <label class="lab">
-                      <svg class="input-icon" viewBox="0 0 24 24" width="25" height="25">
-                        <path fill="currentColor" d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2s-2 .9-2 2s.9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM8.9 6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2H8.9V6zM18 20H6V10h12v10z"/>
-                      </svg>
-                    </label>
-                    <el-input
-                        v-model="model.password"
-                        :type="pwdType"
-                        placeholder="请输入密码"
-                        name="password"
-                        auto-complete="on"
-                    />
-                    <span class="show-pwd" >
+                  <el-form-item prop="password">
+                    <div class="flex">
+                      <label class="lab">
+                        <svg class="input-icon" viewBox="0 0 24 24" width="25" height="25">
+                          <path fill="currentColor" d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2s-2 .9-2 2s.9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM8.9 6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2H8.9V6zM18 20H6V10h12v10z"/>
+                        </svg>
+                      </label>
+                      <el-input
+                          v-model="model.password"
+                          :type="pwdType"
+                          placeholder="请输入密码"
+                          name="password"
+                          auto-complete="on"
+                      />
+                      <span class="show-pwd" >
 
                   </span>
-                  </div>
-                </el-form-item>
-                <el-button
-                    class="login-btn"
-                    type="primary"
-                    style="width: 100%"
-                >
-                  <span v-html="'登&nbsp;录'"></span>
-                </el-button>
+                    </div>
+                  </el-form-item>
+                  <el-button
+                      class="login-btn"
+                      type="primary"
+                      style="width: 100%"
+                  >
+                    <span v-html="'登&nbsp;录'"></span>
+                  </el-button>
+                </el-tab-pane>
+              </el-tabs>
+
               </el-form>
             </div>
           </div>
-          <div class="login-footer">Copyright © 九阶（厦门）信息科技有限公司</div>
         </div>
+        <div class="login-footer">Copyright © 九阶（厦门）信息科技有限公司</div>
       </div>
     </div>
   </div>
@@ -81,8 +79,8 @@ export default {
 </script>
 <script setup>
 import { reactive, ref,onMounted } from 'vue'
-import jq from 'jquery'
 const pwdType = ref('password')
+const activeName=ref('first')
 const model = reactive({
   password: 'demo123456',
   username: 'demo',
@@ -98,48 +96,17 @@ $bg: #43507e;
 $light_gray: #eee;
 $cursor: #fff;
 
-//@supports (-webkit-mask: none) and (not (cater-color: $cursor)) {
-//    .login-container .el-input input {
-//        //color: $bg;
-//        //&::first-line {
-//        //    color: $light_gray;
-//        //}
-//    }
-//}
 .flex {
   display: flex;
 }
 .flex1 {
   flex: 1;
 }
-.login-bg {
-  position: absolute;
-  left: 0;
-  right: 0;
-  box-sizing: border-box;
-  width: 100%;
-  min-width: 900px;
-  height: 100%;
-  //&::before {
-  //  position: absolute;
-  //  left: 50%;
-  // top: 50%;
-  //  margin-top: 2%;
-  // width: 100%;
-  //  height: 80%;
-  // background-image: url('@/assets/img/login/education/loginB/login-left.png');
-  //   background-repeat: no-repeat;
-  //  background-position: center;
-  //  background-size: cover;
-  //  content: '';
-  // transform: translate(-50%, -50%);
-  //}
-}
+
 .login-inner{
   position: absolute;
   width: 100%;
   height: 100%;
-  display: flex;
 }
 /* reset element-ui css */
 
@@ -151,6 +118,9 @@ $light_gray: #eee;
   position: relative;
   width: 100%;
   min-height: 100%;
+
+  background: #ffffff url('@/assets/img/login/education/loginC/login-bg.png') center no-repeat;
+  background-size: cover;
   .inner {
     position: absolute;
     z-index: 9;
@@ -215,33 +185,34 @@ $light_gray: #eee;
     background-color: $cursor;
     line-height: 50px;
   }
-  .login-right {
-    width: 40%;
-    padding-top: 128px;
-    min-height: 100%;
+  .login-info {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding-bottom: 132px;
-    box-sizing: border-box;
-    box-shadow: 1px 1px 15px 1px rgba(0, 0, 0, 0.15);
-    .login-footer{
-      position: absolute;
-      left: 50%;
-      bottom: 15px;
-      margin-left: -260px;
-      padding-bottom: 10px;
-      width: 520px;
-      text-align: center;
-      font-size: 14px;
-      color:#8D949F;
-    }
+    position: absolute;
+    top: 50%;
+    left: 70.5%;
+    transform: translate(-50%,-50%);
+    width: 450px;
+    min-height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 12px;
+    flex-flow: column;
+    background-image: url('@/assets/img/login/education/loginC/login-pic-bg.png');
+    background-attachment: fixed;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
   }
-  .login-left{
-    position: relative;
-    flex:1;
-    background:#8dd8d9
+  .login-footer{
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    margin-left: -260px;
+    width: 520px;
+    text-align: center;
+    font-size: 14px;
+    color:#8D949F;
   }
   .login-img {
     position: absolute;
@@ -259,12 +230,11 @@ $light_gray: #eee;
   }
   .login-con {
     width: 100%;
-    margin-top:-10%;
   }
   .login-form {
     overflow: hidden;
     margin: 0 auto;
-    padding: 30px 10%;
+    padding: 20px 10%;
     height: auto;
     max-width: 650px;
     .txt {
@@ -272,9 +242,8 @@ $light_gray: #eee;
       padding-bottom: 10px;
       text-align: center;
       font-weight: bold;
-      font-size:26px;
+      font-size:23px;
       color: #333;
-      letter-spacing: 10px;
     }
     .is-error {
       .el-form-item {
@@ -307,15 +276,15 @@ $light_gray: #eee;
     color: #889aa4;
   }
   .login-logo {
-    position: absolute;
-    top: 60px;
-    left: 32px;
+
+    position: relative;
+    top:25px;
     display: flex;
     align-items: center;
-    width: calc( 100% - 64px );
+    justify-content: center;
     box-sizing: border-box;
-    height: 22px;
-    .logo{width: 60px;margin-right: 20px;}
+    margin-bottom: 15px;
+    .logo{width: 50px;margin-right: 20px;}
     .title {
       line-height: 80px;
       letter-spacing: 3px;
@@ -326,7 +295,7 @@ $light_gray: #eee;
         line-height: 75px;
         font-family: MicrosoftYaHei-Bold, MicrosoftYaHei, sans-serif;
         font-weight: bold;
-        font-size: 30px;
+        font-size: 28px;
         color: #333
       }
     }
@@ -368,18 +337,18 @@ $light_gray: #eee;
     border: none;
     border-radius: 8px;
     width: 100%;
-    height: 55px;
-    line-height: 55px;
+    height: 52px;
+    line-height: 52px;
     font-size: 18px;
     color: #fff;
     transition: all 0.3s ease-in;
 
 
-    background: linear-gradient(90deg, rgba(0, 186, 199, 1)   0%,rgba(20, 157, 167, 1) 100%);
+    background: linear-gradient(90deg,#1890ff   0%,#0d56b5 100%);
 
 
     &:hover {
-      background: linear-gradient(180deg, rgba(20, 157, 167, 1) 0%, rgba(0, 186, 199, 1) 100%);
+      background: linear-gradient(180deg, #0d56b5 0%,#1890ff  100%);
     }
   }
 }
@@ -412,5 +381,19 @@ $light_gray: #eee;
 }
 :deep(.el-form-item__content) {
   display: block;
+}
+:deep(.el-tabs ){
+  .el-tabs__item {
+    font-size: 18px;
+    font-weight: 500;
+    text-shadow: 0 0 1px #000;
+    margin-bottom: 5px;
+   &is-active {
+      color: #1890ff;
+    }
+  }
+  .el-tabs__content{
+    padding-top:10px;
+  }
 }
 </style>
