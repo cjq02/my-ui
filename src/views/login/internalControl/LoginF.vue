@@ -101,7 +101,7 @@ function setPageStyle() {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .login-page {
   position: relative;
   width: 100vw;

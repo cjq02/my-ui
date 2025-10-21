@@ -12,7 +12,7 @@
         <div class="login-pic">
 
           <div class="login-img">
-            <img src="@/assets/img/login/internalControl/loginE/login-pic2.png" alt="">
+            <img src="@/assets/img/login/internalControl/loginE/login-pic.png" alt="">
           </div>
         </div>
 
