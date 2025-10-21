@@ -198,7 +198,7 @@ $cursor: #fff;
   }
   .el-form-item {
     box-sizing: content-box;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     padding-bottom: 0;
     border-radius: 10px;
     width: 100%;
@@ -231,8 +231,8 @@ $cursor: #fff;
   .login-pic{
     position: relative;
     flex:1;
-    //background: url('@/assets/img/login/internalControl/loginE/login-pic-bg.png') top center no-repeat;
-    //background-size: 100% 100%;
+    background: url('@/assets/img/login/internalControl/loginE/login-pic-bg.png') top center no-repeat;
+    background-size: cover;
     img {
       animation: float 6s ease-in-out infinite;
     }
@@ -332,7 +332,7 @@ $cursor: #fff;
         line-height: 75px;
         font-family: MicrosoftYaHei-Bold, MicrosoftYaHei, sans-serif;
         font-weight: bold;
-        font-size: 50px;
+        font-size: 44px;
         color: #333
       }
     }

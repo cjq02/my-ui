@@ -206,7 +206,7 @@ $light_gray: #eee;
   }
   .el-form-item {
     box-sizing: content-box;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     padding-bottom: 0;
     border-radius: 10px;
     width: 100%;
@@ -250,9 +250,11 @@ $light_gray: #eee;
     position: absolute;
     left: 50%;
     top: 50%;
-    margin-top: 60px;
+    margin-top: 6%;
     text-align: right;
     transform: translate(-50%, -50%);
+    width: 50%;
+    max-width: 650px;
     img {
       max-width: 100%;
       //height: 100%;
@@ -338,7 +340,7 @@ $light_gray: #eee;
         line-height: 75px;
         font-family: MicrosoftYaHei-Bold, MicrosoftYaHei, sans-serif;
         font-weight: bold;
-        font-size: 50px;
+        font-size: 44px;
         color: #333
       }
     }
@@ -432,7 +434,7 @@ $light_gray: #eee;
       margin-top: -10%;
     }
     .login-img {
-      width: 70%;
+      width: 55%;
       //margin-left:5%
     }
     .login-form {
