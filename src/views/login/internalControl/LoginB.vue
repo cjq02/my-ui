@@ -132,12 +132,20 @@ img {
     background-size: cover;
     content: "";
   }
+  &::after {
+    content:"";
+    position:absolute;
+    inset:0;
+    background: radial-gradient(55% 55% at 50% 40%, rgba(37,99,235,.25), rgba(37,99,235,0) 70%);
+    pointer-events:none;
+    z-index:1;
+  }
 }
 .login-container {
   position: relative;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 .login-inner{
   position: absolute;
@@ -170,7 +178,7 @@ img {
     margin: 0 auto 10px;
     line-height: 80px;
     font-weight: bold;
-    font-size: 46px;
+    font-size: 42px;
     letter-spacing: 3px;
     font-family: MicrosoftYaHei-Bold, MicrosoftYaHei, sans-serif;
     color: #ffffff;

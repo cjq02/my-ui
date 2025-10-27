@@ -324,7 +324,7 @@ $light_gray: #eee;
       line-height: 80px;
       font-family: '微软雅黑', serif;
       font-weight: bold;
-      font-size: 48px;
+      font-size: 42px;
       color: $cursor;
       letter-spacing: 3px;
       .pic {

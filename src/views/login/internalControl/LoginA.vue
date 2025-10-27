@@ -1,15 +1,17 @@
 <template>
 <!-- 合同登录-->
   <div class="login-page">
-    <div class="login-container">
+    <div class="title-container titles">
+      <div class="logo">
+        <img class="bg-image" src="@/assets/img/login/internalControl/loginA/login-logo.png"  />
+      </div>
+      <div class="title">
+        <span>智能合同管控系统</span>
+      </div>
+    </div>
+    <div class="login-container" id="login-container">
       <div class="login-form">
-        <div class="logo-title">
-          <!-- 这里可以替换为实际的logo图片 -->
-          <div class="logo">
-            <img class="bg-image" src="@/assets/img/login/internalControl/loginA/login-logo.png"  />
-          </div>
-          <h1>智能合同管控系统</h1>
-        </div>
+        <div  class="txt">登录</div>
         <div class="form-group">
           <label for="username">用户名：</label>
           <input
@@ -28,7 +30,7 @@
               placeholder="密码"
           />
         </div>
-        <button class="login-btn" @click="handleLogin">登录</button>
+        <button class="login-btn">登录</button>
       </div>
       <div class="login-illustration">
         <!-- 这里可以替换为实际的插画图片 -->
@@ -40,15 +42,25 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref,onMounted,nextTick} from 'vue';
 
-const username = ref('');
-const password = ref('');
+import jq from 'jquery'
 
-const handleLogin = () => {
-  console.log('用户名:', username.value, '密码:', password.value);
-  // 实际项目中，可在此处添加调用登录接口等逻辑
-};
+const username = ref('admin');
+const password = ref('test123456');
+
+onMounted( () => {
+  nextTick(() => {
+    setPageStyle()
+  })
+})
+function setPageStyle() {
+  const loginInfo = document.getElementById('login-container')
+  const title = document.getElementsByClassName('titles')[0]
+  const top = (jq(window).height() - jq(loginInfo).height()) / 2.5
+  const titleTop = (top - jq(title).height()) / 2 + 60
+  jq(title).css({ top: titleTop })
+}
 </script>
 
 <style lang="scss" scoped>
@@ -66,19 +78,8 @@ const handleLogin = () => {
     z-index: -1;
     width: 100%;
     height: 100%;
-    background: url('@/assets/img/login/internalControl/loginA/login-bg.png') top center no-repeat;
+    background: url('@/assets/img/login/internalControl/loginA/loginBg.png') top center no-repeat;
     background-size: cover;
-    filter: blur(1.5px) brightness(1) contrast(1) hue-rotate(0deg);
-    content: "";
-  }
-  &:after {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg,#43507e4d,#43507e99);
     content: "";
   }
 }
@@ -87,11 +88,11 @@ const handleLogin = () => {
   width: 1000px;
   height: 400px;
   position: relative;
-  top:-5%;
+  top:20px;
   display: flex;
   background-color: #fff;
   border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1), 0px 17px 36px rgba(0,0, 90, 0.25);
   overflow: hidden;
   z-index: 1;
 }
@@ -102,26 +103,44 @@ const handleLogin = () => {
   display: flex;
   flex-direction: column;
   gap: 20px;
-}
-
-.logo-title {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 10px;
-  margin-bottom: 30px;
-  justify-content: center;
+  .txt {
+    margin: 5px 0 15px 0;
+    padding-bottom: 10px;
+    text-align: left;
+    font-size: 30px;
+    color: #333;
+    letter-spacing: 10px;
+    line-height: 30px;
+    font-weight: 500;
+  }
 }
 
 .logo {
-  width: 36px;
-  height: 32px;
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
 
 }
 
-.logo-title h1 {
-  font-size: 28px;
-  color: #333;
+.title-container {
+  position: absolute;
+  left: 5%;
+  top: 10%;
+  margin-top: -50px;
+  animation: fade-in-down 1s ease-out .2s both;
+  display: flex;
+  line-height: 50px;
+  .title {
+    margin: 0 auto ;
+    font-family: '微软雅黑', serif;
+    font-size: 40px;
+    color:#333;
+    letter-spacing: 5px;
+    text-shadow:
+        2px 2px 2px rgba(0, 0, 0, 0.3),
+        4px 4px 4px rgba(0, 0, 0, 0.1);
+  }
+
 }
 .form-group {
   display: flex;
@@ -168,10 +187,12 @@ const handleLogin = () => {
 }
 
 .illustration {
+  position: relative;
   width: 100%;
   height: 100%;
   background: url('@/assets/img/login/internalControl/loginA/login-pic.png') no-repeat center;
   background-size: cover;
+
 }
 
 .ai-tag {
@@ -189,7 +210,7 @@ const handleLogin = () => {
   width: 100%;
   text-align: center;
   font-size: 14px;
-  color: #ffffff;
+  color: #333333;
   z-index: 2;
 }
 </style>

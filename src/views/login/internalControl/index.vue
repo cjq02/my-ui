@@ -47,8 +47,8 @@ const themes = [
   { id: 'D', name: '登录页D' ,remark:'资产'},
   { id: 'E', name: '登录页E',remark:'预算' },
   { id: 'F', name: '登录页F' ,remark:'支付'},
-  { id: 'G', name: '登录页E',remark:'其他' },
-  { id: 'H', name: '登录页F' ,remark:'其他'},
+  { id: 'G', name: '登录页G',remark:'其他' },
+  { id: 'H', name: '登录页H' ,remark:'其他'},
 ]
 const currentComponent = computed(() => {
   switch(currentTheme.value) {

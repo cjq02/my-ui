@@ -2,12 +2,11 @@
   <div class="page">
     <nav class="top-nav" v-show="showTopNav">
       <div class="nav-left">
-        <button class="nav-button" @click="goHome">返回导航</button>
-        <button class="nav-button" @click="goHome">进入菜单</button>
+        <el-button class="nav-button" @click="goHome">返回导航</el-button>
       </div>
       <div class="nav-links">
         <slot name="loginList" />
-        <button class="nav-toggle ml-8" @click="toggleTopNav">隐藏</button>
+        <el-button class="nav-toggle ml-8" @click="toggleTopNav">隐藏</el-button>
       </div>
     </nav>
 
@@ -141,8 +140,8 @@ onBeforeUnmount(() => {
   padding: 0 10px;
   border-radius: 8px;
   border: 1px solid rgba(255,255,255,.2);
-  background: rgba(255,255,255,.12);
-  color:#e2e8f0;
+  background: rgba(255,255,255,1);
+  color:#333333;
   cursor: pointer;
 }
 
@@ -197,5 +196,10 @@ onBeforeUnmount(() => {
 
  .nav-item.active {
    background: rgba(255, 255, 255, 0.25);
+   button{
+     color: #2b68c0;
+     border-color:#2b68c0;
+
+   }
  }
 </style>

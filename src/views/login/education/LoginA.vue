@@ -1,6 +1,14 @@
 <template>
   <div class="login-page">
-    <div class="login-container">
+    <div class="title-container titles">
+      <div class="logo">
+        <img class="bg-image" src="@/assets/img/login/education/loginA/logo.png"  />
+      </div>
+      <div class="title">
+        <span>高校内部控制化数字平台</span>
+      </div>
+    </div>
+    <div class="login-container" id="login-container">
       <div class="min-h-screen  flex items-center justify-center p-4">
 
         <!-- 主容器 -->
@@ -9,17 +17,14 @@
             <!-- 左侧欢迎区域 -->
             <div class="login-pic p-8 md:p-12  flex-1  relative">
 
-              <div class="relative h-64 md:h-80 w-full mt-5">
-                <p class="text-2xl font-bold text-gray-800 login-title">高校系统管理平台</p>
 
-              </div>
             </div>
 
             <!-- 右侧登录区域 -->
             <div class="login-form  p-8 md:p-12 flex flex-col justify-center">
               <h2 class="text-2xl font-bold text-gray-800 mb-8">登&nbsp;&nbsp;录</h2>
 
-              <form @submit.prevent="handleLogin" class="space-y-6">
+              <form class="space-y-6">
                 <!-- 账号输入 -->
                 <div>
                   <label for="username" class="block text-sm font-medium text-gray-700 mb-1">系统账号/手机号码</label>
@@ -87,7 +92,8 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref ,onMounted,nextTick} from 'vue';
+import jq from 'jquery'
 
 // 表单数据
 const username = ref('admin');
@@ -95,18 +101,20 @@ const password = ref('test123456');
 const showPassword = ref(false);
 const rememberMe = ref(true);
 
-// 登录处理
-const handleLogin = () => {
-  // 这里添加登录逻辑
-  console.log('登录信息:', {
-    username: username.value,
-    password: password.value,
-    rememberMe: rememberMe.value
-  });
 
-  // 实际应用中应该调用API进行登录验证
-  alert('登录功能将在这里实现');
-};
+
+onMounted( () => {
+  nextTick(() => {
+    setPageStyle()
+  })
+})
+function setPageStyle() {
+  const loginInfo = document.getElementById('login-container')
+  const title = document.getElementsByClassName('titles')[0]
+  const top = (jq(window).height() - jq(loginInfo).height()) / 2.5
+  const titleTop = (top - jq(title).height()) / 2 + 80
+  jq(title).css({ top: titleTop })
+}
 </script>
 
 <style lang="scss" scoped>
@@ -116,10 +124,7 @@ const handleLogin = () => {
   50% { transform: translateY(-10px); }
 }
 
-/* 为插图添加浮动动画 */
-img {
-  animation: float 6s ease-in-out infinite;
-}
+
 
 .login-page {
   width: 100vw;
@@ -136,7 +141,7 @@ img {
 .login-inner{
   position: relative;
   width: 1050px;
-  height: 527px;
+  height: 450px;
   z-index: 2;
   opacity: 1;
   background: #ffffff url('@/assets/img/login/education/loginA/login-pic.png') 20px center no-repeat;
@@ -147,6 +152,34 @@ img {
   border-image: linear-gradient(255.15deg, rgba(180, 210, 255, 1) 0%, rgba(255, 255, 255, 0) 100%) 2;
 }
 
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+
+}
+
+.title-container {
+  position: absolute;
+  left: 5%;
+  top: 10%;
+  margin-top: 0;
+  animation: fade-in-down 1s ease-out .2s both;
+  display: flex;
+  line-height: 50px;
+  .title {
+    margin: 0 auto ;
+    font-family: '微软雅黑', serif;
+    font-weight: bold;
+    font-size: 40px;
+    color:#333333;
+    letter-spacing: 5px;
+    text-shadow:
+        2px 2px 2px rgba(0, 0, 0, 0.3),
+        4px 4px 4px rgba(0, 0, 0, 0.1);
+  }
+
+}
 .login-form{
   padding:40px 40px 40px 40px;
   opacity: 1;
