@@ -25,7 +25,7 @@ import LoginD from './LoginD.vue'
 import { ref,computed } from 'vue'
 
 
-const currentTheme = ref('D')
+const currentTheme = ref('A')
 
 // 主题配置
 const themes = [

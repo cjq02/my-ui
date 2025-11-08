@@ -7,9 +7,12 @@
         <div class="gov-title">国家体育总局</div>
       </div>
     </div>
-    <img class="bg-image" src="@/assets/img/login/sports/login-bg.png" alt="stadium background" />
-    <div class="orb orb--1"></div>
-    <div class="orb orb--2"></div>
+    <div class="login-bg">
+
+    </div>
+<!--    <img class="bg-image" src="@/assets/img/login/sports/loginA/login-bg.png" alt="stadium background" />-->
+<!--    <div class="orb orb&#45;&#45;1"></div>-->
+<!--    <div class="orb orb&#45;&#45;2"></div>-->
     <div class="container">
       <form class="card" @submit.prevent="onSubmit">
         <header class="header">
@@ -73,6 +76,14 @@ async function onSubmit(){
   }
 }
 
+.login-bg{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:  url('@/assets/img/login/sports/loginA/login-bg1.png') center bottom no-repeat;
+  background-size: cover;
+}
+
 .bg-image {
   position:absolute;
   inset:0;
@@ -82,7 +93,6 @@ async function onSubmit(){
   filter: blur(8px) brightness(0.62) saturate(1.1);
   opacity: .48;
 }
-
 .orb {
   position: absolute;
   border-radius: 50%;
@@ -112,6 +122,7 @@ async function onSubmit(){
 }
 
 .card {
+  position: relative;
   margin: 0 auto;
   width: min(100%, 420px);
   background: rgba(255,255,255,.06);
@@ -120,6 +131,8 @@ async function onSubmit(){
   backdrop-filter: blur(10px);
   border-radius: 18px;
   padding: 28px 28px 24px;
+  background-color: #ffffff;
+  z-index: 2;
 
   .header {
     text-align: center;
@@ -189,7 +202,7 @@ async function onSubmit(){
   margin: 16px 0;
 
   label {
-    color: #E2E8F0;
+    color: #333333;
     font-size: 14px;
   }
 
