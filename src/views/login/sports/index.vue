@@ -30,9 +30,9 @@ const currentTheme = ref('A')
 // 主题配置
 const themes = [
   { id: 'A', name: '登录页A' },
-  { id: 'B', name: '登录页B' },
-  { id: 'C', name: '登录页C' },
-  { id: 'D', name: '登录页D' },
+  // { id: 'B', name: '登录页B' },
+  // { id: 'C', name: '登录页C' },
+  { id: 'D', name: '登录页B' },
 ]
 const currentComponent = computed(() => {
   switch(currentTheme.value) {
