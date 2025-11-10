@@ -137,12 +137,12 @@ async function onSubmit(){
   .header {
     text-align: center;
     margin-bottom: 14px;
-    color: #E5E7EB;
+    color: #333333;
 
     h1 {
       margin: 0 0 6px;
       font-size: 22px;
-      color: #FFFFFF;
+      color: #333333;
     }
 
     p {
