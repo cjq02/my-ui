@@ -3,13 +3,23 @@
     <div class="login-container">
       <div class="min-h-screen  flex items-center justify-center p-4">
 
-        <div class="login-title">
-          <span>采购系统管理平台</span>
-        </div>
         <!-- 主容器 -->
-        <div class="w-full max-w-2xl login-inner">
-          <div class="grid md:grid-cols-1 gap-0">
+        <div class="w-full max-w-5xl   login-inner">
+          <p class="text-2xl font-bold text-gray-800 login-title">采购系统管理平台</p>
+          <div class="grid md:grid-cols-2 gap-0">
+            <!-- 左侧欢迎区域 -->
+            <div class="login-pic p-8 md:p-12 flex flex-col justify-center relative overflow-hidden">
 
+              <!-- 欢迎文本 -->
+              <div class="relative z-10">
+
+                <!-- 3D插图区域 -->
+                <div class="relative h-64 md:h-80 w-full mt-5">
+
+                  <img src="@/assets/img/login/internalControl/loginB2/login-pic.png"  class="bg-image w-full h-full object-contain" loading="lazy"/>
+                </div>
+              </div>
+            </div>
 
             <!-- 右侧登录区域 -->
             <div class="login-form  p-8 md:p-12 flex flex-col justify-center">
@@ -128,63 +138,65 @@ img {
     z-index: -1;
     width: 100%;
     height: 100%;
-    background: url('@/assets/img/login/internalControl/loginB/login-bg.png') top center no-repeat;
+    background: url('@/assets/img/login/internalControl/loginB2/login-bg.png') top center no-repeat;
     background-size: cover;
     content: "";
-  }
-  &::after {
-    content:"";
-    position:absolute;
-    inset:0;
-    background: radial-gradient(55% 55% at 50% 40%, rgba(37,99,235,.25), rgba(37,99,235,0) 70%);
-    pointer-events:none;
-    z-index:1;
   }
 }
 .login-container {
   position: relative;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  z-index: 1;
 }
 .login-inner{
-  position: absolute;
-  right: 12%;
+  position: relative;
   z-index: 2;
   opacity: 1;
+  background: #ffffff ;
   border-radius: 20px;
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1), 0px 17px 36px rgba(0,0, 90, 0.25);
   box-sizing: border-box;
+  border-image: linear-gradient(255.15deg, rgba(180, 210, 255, 1) 0%, rgba(255, 255, 255, 0) 100%) 2;
 
-  width: 500px;
 }
-
+.login-pic{
+  position: relative;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  overflow: hidden;
+  &:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url('@/assets/img/login/internalControl/loginB2/login-pic-bg.png') bottom center no-repeat;
+    background-size: cover;
+  }
+}
 .login-form{
   padding:20px 40px 30px 40px;
   opacity: 1;
-  border-radius: 30px;
+  border-radius: 0px 30px 30px 0px;
   background: #ffffff;
 
 }
+.login-pic{
+  padding:20px 40px 20px 40px;
+}
 .login-title{
-
   position: absolute;
-  left: 5%;
-  top: 10%;
-  z-index: 1;
+  left:0;
+  width: 100%;
   text-align: center;
-
-  span {
-    margin: 0 auto 10px;
-    line-height: 80px;
-    font-weight: bold;
-    font-size: 42px;
-    letter-spacing: 3px;
-    font-family: MicrosoftYaHei-Bold, MicrosoftYaHei, sans-serif;
-    color: #ffffff;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3), 4px 4px 4px rgba(0, 0, 0, 0.1);
-
-  }
+  top: -100px;
+  height: 70px;
+  animation: fade-in-down 1s ease-out .2s both;
+  color: #ffffff;
+  font-size: 34px;
+  z-index: 1;
 }
 .login-bottom {
   position: absolute;
@@ -195,21 +207,5 @@ img {
   text-align: center;
   font-size: 14px;
   color: #ffffff;
-}
-
-@media screen and (max-width: 1440px) {
-  .login-title {
-    span{
-      line-height: 55px;
-      font-size: 42px;
-    }
-    }
-  .login-inner{
-    right:7%;
-    width: 450px;
-  }
-    .login-form {
-      padding: 20px 7% 15px;
-    }
 }
 </style>

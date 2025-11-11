@@ -27,7 +27,8 @@
 <script setup lang="ts">
 import Login from '../Login.vue'
 import LoginA from './LoginA.vue'
-import LoginB from './LoginB.vue'
+import LoginB1 from './LoginB.vue'
+import LoginB2 from './LoginB2.vue'
 import LoginC from './LoginC.vue'
 import LoginD from './LoginD.vue'
 import LoginE from './LoginE.vue'
@@ -42,7 +43,8 @@ const currentTheme = ref('A')
 // 主题配置
 const themes = [
   { id: 'A', name: '登录页A',remark:'合同' },
-  { id: 'B', name: '登录页B',remark:'采购' },
+  { id: 'B1', name: '登录页B1',remark:'采购1' },
+  { id: 'B2', name: '登录页B2',remark:'采购2' },
   { id: 'C', name: '登录页C',remark:'销售' },
   { id: 'D', name: '登录页D' ,remark:'资产'},
   { id: 'E', name: '登录页E',remark:'预算' },
@@ -53,7 +55,8 @@ const themes = [
 const currentComponent = computed(() => {
   switch(currentTheme.value) {
     case 'A': return LoginA
-    case 'B': return LoginB
+    case 'B1': return LoginB1
+    case 'B2': return LoginB2
     case 'C': return LoginC
     case 'D': return LoginD
     case 'E': return LoginE
