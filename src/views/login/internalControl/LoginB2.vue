@@ -153,7 +153,8 @@ img {
   position: relative;
   z-index: 2;
   opacity: 1;
-  background: #ffffff ;
+  background: rgba(239, 246, 255, 1) url('@/assets/img/login/internalControl/loginB2/login-pic-bg2.png') top center no-repeat;
+  background-size: cover;
   border-radius: 20px;
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1), 0px 17px 36px rgba(0,0, 90, 0.25);
   box-sizing: border-box;
@@ -165,16 +166,7 @@ img {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   overflow: hidden;
-  &:before{
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: url('@/assets/img/login/internalControl/loginB2/login-pic-bg.png') bottom center no-repeat;
-    background-size: cover;
-  }
+
 }
 .login-form{
   padding:20px 40px 30px 40px;
@@ -182,6 +174,7 @@ img {
   border-radius: 0px 30px 30px 0px;
   background: #ffffff;
 
+  box-shadow: -1px 0 2px rgba(2, 2, 2, 0.1019607843);
 }
 .login-pic{
   padding:20px 40px 20px 40px;
@@ -194,7 +187,7 @@ img {
   top: -100px;
   height: 70px;
   animation: fade-in-down 1s ease-out .2s both;
-  color: #ffffff;
+  color: #333;
   font-size: 34px;
   z-index: 1;
 }
@@ -206,6 +199,6 @@ img {
   width: 100%;
   text-align: center;
   font-size: 14px;
-  color: #ffffff;
+  color: #333;
 }
 </style>
