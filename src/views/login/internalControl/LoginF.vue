@@ -2,6 +2,9 @@
 <!--  支付登录-->
   <div class="login-page">
     <div class="title-container titles">
+      <div class="logo">
+        <img class="bg-image" src="@/assets/img/login/internalControl/loginF/logo.png"  />
+      </div>
       <h3 class="title">
         <span>支付管理平台</span>
       </h3>
@@ -9,7 +12,7 @@
     <div class="login-container" id="login-container">
       <div class="login-illustration">
         <div class="illustration">
-          <img src="@/assets/img/login/internalControl/loginF/login-pic.png" alt="">
+<!--          <img src="@/assets/img/login/internalControl/loginF/login-pic.png" alt="">-->
         </div>
       </div>
       <!-- 右侧登录区域 -->
@@ -96,7 +99,7 @@ function setPageStyle() {
   const loginInfo = document.getElementById('login-container')
   const title = document.getElementsByClassName('titles')[0]
   const top = (jq(window).height() - jq(loginInfo).height()) / 2.5
-  const titleTop = (top - jq(title).height()) / 2 + 60
+  const titleTop = (top - jq(title).height()) / 2 + 80
   jq(title).css({ top: titleTop })
 }
 </script>
@@ -136,15 +139,15 @@ function setPageStyle() {
 
 .title-container {
   position: absolute;
-  left: 50%;
-  top:10%;
-  height: 70px;
-  transform: translate(-50%, 0);
+  left: 5%;
+  top: 10%;
+  margin-top: -50px;
   animation: fade-in-down 1s ease-out .2s both;
-
+  display: flex;
+  line-height: 50px;
   .title {
-    margin: 0 auto 10px;
-    line-height: 80px;
+    margin: 0 auto ;
+    line-height: 50px;
     font-family: '微软雅黑', serif;
     font-weight: bold;
     font-size: 40px;
@@ -167,6 +170,7 @@ function setPageStyle() {
   background: url('@/assets/img/login/internalControl/loginF/login-pic-bg.png') top center no-repeat;
   background-size: 100% 100%;
   border-radius: 30px;
+  overflow: hidden;
 
 }
 
@@ -190,8 +194,9 @@ function setPageStyle() {
 }
 
 .logo {
-  width: 36px;
-  height: 32px;
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
 
 }
 
@@ -245,6 +250,7 @@ function setPageStyle() {
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 1px 0 2px rgba(2, 2, 2, 0.1)
 }
 
 .illustration {
@@ -252,6 +258,13 @@ function setPageStyle() {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
+  background: url('@/assets/img/login/internalControl/loginF/login-pic.png') no-repeat center;
+  background-size: cover;
+  img{
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .login-bottom {
@@ -269,6 +282,11 @@ function setPageStyle() {
 {
   .title-container {
   }
+  .login-container{
+    margin-top:5%;
+    height: 440px;
+  }
+
 
 }
 </style>
