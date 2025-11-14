@@ -40,7 +40,7 @@
 
 
     </main>
-    <footer class="login-bottom"><span>技术支持：九阶（北京）信息科技有限公司</span></footer>
+    <footer class="login-bottom"><span>技术支持：九阶（厦门）信息科技有限公司</span></footer>
 
   </div>
 </template>

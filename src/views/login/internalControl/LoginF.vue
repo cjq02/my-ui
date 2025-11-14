@@ -1,82 +1,85 @@
 <template>
 <!--  支付登录-->
   <div class="login-page">
-    <div class="title-container titles">
-      <div class="logo">
-        <img class="bg-image" src="@/assets/img/login/internalControl/loginF/logo.png"  />
+    <div class="login-page-inner">
+
+      <div class="title-container titles">
+        <div class="logo">
+          <img class="bg-image" src="@/assets/img/login/internalControl/loginF/logo.png"  />
+        </div>
+        <h3 class="title">
+          <span>支付管理平台</span>
+        </h3>
       </div>
-      <h3 class="title">
-        <span>支付管理平台</span>
-      </h3>
-    </div>
-    <div class="login-container" id="login-container">
-      <div class="login-illustration">
-        <div class="illustration">
-<!--          <img src="@/assets/img/login/internalControl/loginF/login-pic.png" alt="">-->
+      <div class="login-container" id="login-container">
+        <div class="login-illustration">
+          <div class="illustration">
+            <!--          <img src="@/assets/img/login/internalControl/loginF/login-pic.png" alt="">-->
+          </div>
+        </div>
+        <!-- 右侧登录区域 -->
+        <div class="login-form  flex flex-col justify-center">
+          <h2 class="text-2xl  mb-3 login-title">登&nbsp;&nbsp;录</h2>
+
+          <form  class="space-y-6">
+            <!-- 账号输入 -->
+            <div>
+              <label for="username" class="block text-lg font-medium text-gray-700 mb-1">系统账号/手机号码</label>
+              <div class="relative">
+                <input
+                    type="text"
+                    id="username"
+                    v-model="username"
+                    class="w-full px-4 py-3 rounded-lg border border-gray-300 "
+                    placeholder="请输入账号"
+                    required
+                >
+              </div>
+            </div>
+
+            <!-- 密码输入 -->
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <label for="password" class="block text-lg font-medium text-gray-700">账号密码</label>
+                <a href="#" class="text-sm text-blue-500 hover:text-blue-600 transition-colors">忘记密码</a>
+              </div>
+              <div class="relative">
+                <input
+                    :type="showPassword ? 'text' : 'password'"
+                    id="password"
+                    v-model="password"
+                    class="w-full px-4 py-3 rounded-lg border border-gray-300 "
+                    placeholder="请输入密码"
+                    required
+                >
+
+              </div>
+            </div>
+
+            <!-- 记住密码 -->
+            <div class="flex items-center">
+              <input
+                  type="checkbox"
+                  id="remember"
+                  v-model="rememberMe"
+                  class="w-4 h-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+              >
+              <label for="remember" class="ml-2 block text-sm text-gray-700">记住密码</label>
+            </div>
+
+            <!-- 登录按钮 -->
+            <button
+                type="submit"
+                class="login-btn"
+            >
+              <span class="text-lg">进入系统</span>
+            </button>
+          </form>
+
         </div>
       </div>
-      <!-- 右侧登录区域 -->
-      <div class="login-form  flex flex-col justify-center">
-        <h2 class="text-2xl  mb-3 login-title">登&nbsp;&nbsp;录</h2>
-
-        <form  class="space-y-6">
-          <!-- 账号输入 -->
-          <div>
-            <label for="username" class="block text-lg font-medium text-gray-700 mb-1">系统账号/手机号码</label>
-            <div class="relative">
-              <input
-                  type="text"
-                  id="username"
-                  v-model="username"
-                  class="w-full px-4 py-3 rounded-lg border border-gray-300 "
-                  placeholder="请输入账号"
-                  required
-              >
-            </div>
-          </div>
-
-          <!-- 密码输入 -->
-          <div>
-            <div class="flex justify-between items-center mb-1">
-              <label for="password" class="block text-lg font-medium text-gray-700">账号密码</label>
-              <a href="#" class="text-sm text-blue-500 hover:text-blue-600 transition-colors">忘记密码</a>
-            </div>
-            <div class="relative">
-              <input
-                  :type="showPassword ? 'text' : 'password'"
-                  id="password"
-                  v-model="password"
-                  class="w-full px-4 py-3 rounded-lg border border-gray-300 "
-                  placeholder="请输入密码"
-                  required
-              >
-
-            </div>
-          </div>
-
-          <!-- 记住密码 -->
-          <div class="flex items-center">
-            <input
-                type="checkbox"
-                id="remember"
-                v-model="rememberMe"
-                class="w-4 h-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-            >
-            <label for="remember" class="ml-2 block text-sm text-gray-700">记住密码</label>
-          </div>
-
-          <!-- 登录按钮 -->
-          <button
-              type="submit"
-              class="login-btn"
-          >
-            <span class="text-lg">进入系统</span>
-          </button>
-        </form>
-
-      </div>
+      <div  class="login-bottom">Copyright © 九阶（厦门）信息科技有限公司</div>
     </div>
-    <div  class="login-bottom">Copyright © 九阶（厦门）信息科技有限公司</div>
   </div>
 </template>
 
@@ -105,7 +108,37 @@ function setPageStyle() {
 </script>
 
 <style scoped>
-.login-page {
+.login-page{
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  &:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background:  url('@/assets/img/login/internalControl/loginF/login-bg.png') center center no-repeat;
+    background-size: cover;
+    content: "";
+    //filter: blur(2px) brightness(0.62) saturate(1.1);
+    //opacity: .9;
+  }
+  &:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg,#43507e4d,#43507e99);
+    content: "";
+  }
+}
+.login-page-inner {
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -113,28 +146,7 @@ function setPageStyle() {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  &:before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    background:  url('@/assets/img/login/internalControl/loginF/login-bg.png') center center no-repeat;
-
-    background-size: cover;
-    content: "";
-  }
-  &:after {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg,#43507e4d,#43507e99);
-    content: "";
-  }
+  z-index: 2;
 }
 
 .title-container {
